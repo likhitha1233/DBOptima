@@ -2,5 +2,5 @@ streamlit==1.33.0
 plotly==5.17.0
 pandas==2.1.4
 requests==2.31.0
-pillow==9.5.0
+pillow==8.4.0
 numpy==1.25.2

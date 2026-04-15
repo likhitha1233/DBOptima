@@ -1,0 +1,138 @@
+# Production-grade Requirements for AI Database Performance Optimizer Pro
+# Version 2.0.0 - Enhanced with ML, Anomaly Detection, and Security
+
+# Core Framework
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+
+# Database & ORM
+sqlalchemy==2.0.23
+alembic==1.12.1
+psycopg2-binary==2.9.9
+pymysql==1.1.0
+
+# Machine Learning & Data Science
+scikit-learn==1.3.2
+numpy==1.24.4
+pandas==2.1.4
+joblib==1.3.2
+
+# System Monitoring
+psutil==5.9.6
+
+# Background Tasks & Scheduling
+apscheduler==3.10.4
+
+# Security & Authentication
+cryptography==41.0.8
+passlib[bcrypt]==1.7.4
+python-jose[cryptography]==3.3.0
+
+# Rate Limiting & Caching
+redis==5.0.1
+slowapi==0.1.9
+
+# Data Validation & Serialization
+pydantic==2.5.0
+pydantic-settings==2.1.0
+
+# HTTP Client
+httpx==0.25.2
+requests==2.31.0
+
+# Frontend (Streamlit Dashboard)
+streamlit==1.28.2
+plotly==5.17.0
+matplotlib==3.8.2
+
+# Development & Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-cov==4.1.0
+pytest-mock==3.12.0
+black==23.11.0
+isort==5.12.0
+flake8==6.1.0
+mypy==1.7.1
+
+# Environment Configuration
+python-dotenv==1.0.0
+
+# Logging & Monitoring
+structlog==23.2.0
+prometheus-client==0.19.0
+
+# Performance & Profiling
+py-spy==0.3.14
+memory-profiler==0.61.0
+
+# Utilities
+python-dateutil==2.8.2
+pytz==2023.3
+click==8.1.7
+rich==13.7.0
+typer==0.9.0
+
+# Production Server
+gunicorn==21.2.0
+
+# Database Connection Pooling
+sqlalchemy-utils==0.41.1
+
+# Async Support
+asyncpg==0.29.0
+aiomysql==0.2.0
+
+# API Documentation
+fastapi-users==12.1.2
+
+# Monitoring & Observability
+opentelemetry-api==1.21.0
+opentelemetry-sdk==1.21.0
+opentelemetry-instrumentation-fastapi==0.42b0
+opentelemetry-instrumentation-sqlalchemy==0.42b0
+
+# Health Checks
+fastapi-health==0.4.0
+
+# Configuration Management
+dynaconf==3.2.4
+
+# Time Series Processing (optional enhancement)
+timeseriesdb==0.2.0
+
+# Advanced Analytics (optional)
+scipy==1.11.4
+seaborn==0.13.0
+
+# Data Export/Import
+openpyxl==3.1.2
+xlsxwriter==3.1.9
+
+# Webhook Support (for alerts)
+webhooks==0.4.1
+
+# Email Notifications (for alerts)
+aiosmtplib==3.0.1
+jinja2==3.1.2
+
+# API Documentation Enhancement
+redoc==2.0.1
+fastapi-pagination==0.12.13
+
+# Database Migrations
+alembic-postgresql-enum==1.2.0
+
+# Performance Monitoring
+newrelic==9.2.0
+
+# Security Scanning
+bandit==1.7.5
+safety==2.3.5
+
+# Container Support
+docker==6.1.3
+
+# Development Server
+watchdog==3.0.0

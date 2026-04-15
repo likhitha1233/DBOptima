@@ -1,0 +1,202 @@
+# AI Database Performance Optimizer Configuration
+
+# Database Configuration
+database:
+  type: ${DB_TYPE:mysql}  # mysql or postgresql
+  host: ${DB_HOST:localhost}
+  port: ${DB_PORT:3306}
+  name: ${DB_NAME:your_database}
+  user: ${DB_USER:your_username}
+  password: ${DB_PASSWORD:your_password}
+  pool_size: ${DB_POOL_SIZE:10}
+  max_overflow: ${DB_MAX_OVERFLOW:20}
+  pool_timeout: ${DB_POOL_TIMEOUT:30}
+  pool_recycle: ${DB_POOL_RECYCLE:3600}
+  echo: ${DB_ECHO:false}
+
+# API Configuration
+api:
+  host: ${API_HOST:0.0.0.0}
+  port: ${API_PORT:8000}
+  debug: ${API_DEBUG:false}
+  title: "AI Database Performance Optimizer"
+  description: "AI-powered database performance monitoring and optimization system"
+  version: "1.0.0"
+  docs_url: "/docs"
+  redoc_url: "/redoc"
+
+# CORS Configuration
+cors:
+  allow_origins:
+    - "http://localhost:3000"
+    - "http://localhost:8501"
+    - "http://127.0.0.1:8501"
+  allow_credentials: true
+  allow_methods:
+    - "GET"
+    - "POST"
+    - "PUT"
+    - "DELETE"
+    - "OPTIONS"
+  allow_headers:
+    - "*"
+
+# Monitoring Configuration
+monitoring:
+  interval_seconds: ${MONITORING_INTERVAL:60}
+  slow_query_threshold_ms: ${SLOW_QUERY_THRESHOLD:1000}
+  metrics_retention_days: ${METRICS_RETENTION_DAYS:30}
+  enable_system_metrics: ${ENABLE_SYSTEM_METRICS:true}
+  enable_database_metrics: ${ENABLE_DATABASE_METRICS:true}
+  enable_query_logging: ${ENABLE_QUERY_LOGGING:true}
+
+# Machine Learning Configuration
+ml:
+  model_update_interval_seconds: ${ML_MODEL_UPDATE_INTERVAL:3600}
+  prediction_horizon_hours: ${ML_PREDICTION_HORIZON:24}
+  min_training_samples: ${ML_MIN_TRAINING_SAMPLES:50}
+  performance_thresholds:
+    min_r2_score: ${ML_MIN_R2_SCORE:0.3}
+    max_mape_percentage: ${ML_MAX_MAPE_PERCENTAGE:50}
+  feature_engineering:
+    enable_cyclical_encoding: ${ML_ENABLE_CYCLICAL_ENCODING:true}
+    enable_interaction_features: ${ML_ENABLE_INTERACTION_FEATURES:true}
+    enable_statistical_features: ${ML_ENABLE_STATISTICAL_FEATURES:true}
+  models:
+    cpu:
+      type: "gradient_boosting"
+      n_estimators: 100
+      max_depth: 3
+      learning_rate: 0.1
+      random_state: 42
+    memory:
+      type: "random_forest"
+      n_estimators: 100
+      max_depth: 10
+      random_state: 42
+    disk:
+      type: "linear"
+      normalize: true
+
+# Dashboard Configuration
+dashboard:
+  port: ${DASHBOARD_PORT:8501}
+  title: "AI Database Performance Optimizer"
+  layout: "wide"
+  initial_sidebar_state: "expanded"
+  auto_refresh_options:
+    - 5
+    - 10
+    - 30
+    - 60
+  default_refresh_interval: ${DASHBOARD_REFRESH_INTERVAL:10}
+  chart_config:
+    color_scheme: "plotly"
+    theme: "streamlit"
+    height: 400
+
+# Index Recommendation Configuration
+index_recommendations:
+  min_pattern_frequency: 3
+  max_composite_columns: 3
+  improvement_thresholds:
+    where_clause: 5
+    composite_where: 3
+    slow_query_optimization: 2
+    foreign_key: 3
+    order_by: 5
+    group_by: 3
+  enable_foreign_key_detection: true
+  enable_order_by_optimization: true
+  enable_group_by_optimization: true
+
+# Query Analysis Configuration
+query_analysis:
+  enable_advanced_parsing: true
+  anti_patterns:
+    select_star: true
+    subqueries: true
+    inefficient_joins: true
+    functions_in_where: true
+    leading_wildcard: true
+    unlimited_order_by: true
+    or_conditions: true
+    distinct_without_index: true
+    complex_group_by: true
+    having_clause: true
+    union_operations: true
+  execution_plan_timeout: 30
+
+# Reporting Configuration
+reporting:
+  enable_daily_reports: true
+  enable_weekly_reports: true
+  enable_exports: true
+  export_formats:
+    - "json"
+    - "csv"
+    - "xlsx"
+  retention:
+    daily_reports_days: 90
+    weekly_reports_days: 365
+  scheduling:
+    daily_time: "23:59"
+    weekly_day: "sunday"
+    weekly_time: "23:59"
+
+# Logging Configuration
+logging:
+  level: ${LOG_LEVEL:INFO}  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  format: "${LOG_FORMAT:%(asctime)s - %(name)s - %(levelname)s - %(message)s}"
+  file: ${LOG_FILE:logs/app.log}
+  max_file_size: ${LOG_MAX_FILE_SIZE:10MB}
+  backup_count: ${LOG_BACKUP_COUNT:5}
+  enable_console_logging: ${LOG_CONSOLE:true}
+  enable_file_logging: ${LOG_FILE_ENABLED:true}
+  loggers:
+    app: "INFO"
+    database: "WARNING"
+    ml: "INFO"
+    monitoring: "INFO"
+    recommendations: "INFO"
+
+# Security Configuration
+security:
+  enable_authentication: ${SECURITY_ENABLE_AUTH:false}
+  jwt_secret_key: ${JWT_SECRET_KEY:your-secret-key-change-in-production}
+  jwt_algorithm: "HS256"
+  jwt_expiration_hours: ${JWT_EXPIRATION_HOURS:24}
+  rate_limiting:
+    enabled: ${RATE_LIMIT_ENABLED:false}
+    requests_per_minute: ${RATE_LIMIT_RPM:60}
+    burst_size: ${RATE_LIMIT_BURST:10}
+  api_keys:
+    enabled: ${API_KEYS_ENABLED:false}
+    required_headers:
+      - "X-API-Key"
+
+# Performance Configuration
+performance:
+  enable_caching: false
+  cache_ttl_seconds: 300
+  connection_pool_size: 20
+  max_concurrent_requests: 100
+  request_timeout: 30
+  enable_compression: true
+  compression_threshold: 1024
+
+# Development Configuration
+development:
+  enable_debug_endpoints: true
+  enable_profiling: false
+  mock_external_services: false
+  test_data_generation: false
+  hot_reload: true
+
+# Production Configuration
+production:
+  enable_monitoring: true
+  enable_health_checks: true
+  graceful_shutdown_timeout: 30
+  worker_processes: 4
+  max_memory_usage_mb: 1024
